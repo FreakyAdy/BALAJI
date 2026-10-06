@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-green: #27A844;
+  --color-deep-green: #147331;
+  --color-forest-green: #0F5127;
+  --color-dark-charcoal: #171917;
+  --color-soft-black: #0D0F0D;
+  --color-pure-white: #FFFFFF;
+  --color-warm-off-white: #F8FAF5;
+  --color-light-green: #EAF6EA;
+  --color-muted-green: #6E9D72;
+  --color-accent-gold: #D4A63C;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #171917;
+    background-color: #F8FAF5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: var(--font-dm-serif), Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Subtle architectural Indian geometric watermark pattern at 2-4% opacity */
+.bg-subtle-pattern {
+  background-image: radial-gradient(rgba(39, 168, 68, 0.04) 1.5px, transparent 1.5px),
+                    radial-gradient(rgba(23, 25, 23, 0.03) 1.5px, #F8FAF5 1.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Subtle striped awning motif for storefront references */
+.bg-awning-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    #27A844,
+    #27A844 14px,
+    #FFFFFF 14px,
+    #FFFFFF 28px
+  );
+}
+
+/* Checkered floor subtle motif for storefront references */
+.bg-checkered-floor {
+  background-image: 
+    linear-gradient(45deg, #171917 25%, transparent 25%), 
+    linear-gradient(-45deg, #171917 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #171917 75%), 
+    linear-gradient(-45deg, transparent 75%, #171917 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.05;
+}
+
+/* Custom horizontal scroll bar styling for category chips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom interactive button styles */
+.btn-primary {
+  background-color: #27A844;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(39, 168, 68, 0.2);
+}
+.btn-primary:hover {
+  background-color: #147331;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(20, 115, 49, 0.25);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #147331;
+  border: 1.5px solid #27A844;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover {
+  background-color: #EAF6EA;
+  border-color: #147331;
+  color: #0F5127;
+  transform: translateY(-2px);
+}
+
+/* FSSAI Pure Veg badge standard */
+.veg-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #27A844;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+.veg-indicator::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #27A844;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
